@@ -1,12 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.DATABASE_URL || "file:./prod.db",
-    },
-  },
-});
+const prisma = new PrismaClient();
 
 async function main() {
   // Datos iniciales para el Director
