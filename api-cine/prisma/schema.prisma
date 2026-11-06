@@ -11,6 +11,7 @@ datasource db {
   provider = "sqlite"
 }
 
+
 model Director {
   id Int @id @default(autoincrement()) //Se autoincrementa al insertar un nuevo director
   nombre String
