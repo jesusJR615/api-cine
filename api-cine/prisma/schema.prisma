@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Director {
+  id Int @id @default(autoincrement()) //Se autoincrementa al insertar un nuevo director
+  nombre String
+  apellido String
+  edad Int
+  nacionalidad String
+  pelicula Pelicula[] //Director puede dirigir muchas peliculas, lo añado en un array
+}
+
+model Pelicula {
+  id Int @id @default(autoincrement()) //Se autoincrementa al insertar una nueva película
+  titulo String
+  descripcion String
+  año Int
+  genero String
+  valoracion Int @default(0)
+  prioridad String @default("Media") //Por defecto si el usuario no establece ninguna prioridad se le asigna 'Media' 
+  directorID Int //clave foranea del modelo Director
+  director Director @relation(fields: [directorID], references: [id]) //fields -> para saber el campo que vamos almacenar dentro de la tabla Pelicula, en esta caso el id del director
+}
+
