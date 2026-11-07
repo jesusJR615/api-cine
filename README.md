@@ -1,4 +1,4 @@
-# Aplicación de tareas
+# Aplicación de Cine
 
 Ejercicio progresivo de PAFW.
 
@@ -6,7 +6,7 @@ Ejercicio progresivo de PAFW.
 Express + Prisma + SQLite (api-cine/)
 
 ## Frontend
-React + Vite (tareas-frontend/)
+React + Vite (cine-frontend/)
 
 ## Desarrollo local
 - Backend: copiar `.env.example` a `.env` y ejecutar `npm run dev`
